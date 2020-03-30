@@ -15,8 +15,6 @@ def image_file_size(sourceimages_path, min_image_size=100000):  # File size, sma
     for subdir, dirs, files in os.walk(sourceimages_path):
         for file in files:
             filename = os.path.join(subdir, file)
-            print(filename)
-            print(os.path.getsize(filename))
             if os.path.getsize(filename) <= min_image_size:
                 small_image_list.append(os.path.basename(filename))
     return small_image_list
